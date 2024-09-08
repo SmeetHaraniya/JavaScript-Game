@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --bg-main: #464646;
+    --bg-card: #2D2727;
+    --border-color: #efc745;
+}
+
+body {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 90vh;
+    background-image: url(bgmain.jpg);
+    background-size: cover;
+}
+
+
+#cards_section {
+    display: grid;
+    margin: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+#heading {
+    color: goldenrod;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+}
+
+.card {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+}
+
+
+.start_backcard,
+.card,
+.back_card,
+.front_card {
+    height: 7rem;
+    width: 5rem;
+}
+
+.front_card,
+.back_card {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+span {
+    color: var(--border-color);
+}
+
+.front_card {
+    background-color: var(--border-color);
+    background-image: url('background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: .6rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 1rem;
+}
+
+.back_card {
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.selected_card {
+    transform: rotateY(180deg);
+}
+
+.cm .back_card {
+    transform: rotateY(-360deg);
+    background-color: var(--bg-card);
+    background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+#flipflop,
+#score {
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+@media (max-width: 490px) {
+    #card_section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+#start,
+#restart {
+    width: 150px;
+    font-weight: bold;
+    padding: 5px;
+    /* margin: 20px; */
+    font-size: x-large;
+    border-radius: 0.7rem;
+    background-color: goldenrod;
+}
+
+#win{
+    margin: 10px;
+    font-weight: bold;
+}
+
+
+.start_backcard {
+    /* transform: rotateY(180deg); */
+    background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 2rem;
+}
+
+.time{
+    font-size: x-large;
+    font-weight: bold;
+}
